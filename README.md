@@ -1,5 +1,4 @@
-# COMS4995
-## HappyPuppies
+# HappyPuppies
 ![GitHub](https://img.shields.io/github/license/Longweig/COMS4995)
 
 ### Description
