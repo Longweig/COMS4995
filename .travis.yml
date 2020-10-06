@@ -10,4 +10,4 @@ before_install:
   - pip install -U pytest
 
 
-script: pytest 
+script: pytest test.py
