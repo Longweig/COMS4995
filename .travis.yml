@@ -8,4 +8,4 @@ before_install:
   - pip install -U pytest
 
 
-script: python3.8 -m pytest -vvv /OSS_project/tests/
+script: pytest /OSS_project/tests/
