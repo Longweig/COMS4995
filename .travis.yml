@@ -1,7 +1,5 @@
 language: python
 python:
-  - 3.5
-  - 3.6
   - 3.7
   - 3.8
 before_install:
@@ -10,4 +8,4 @@ before_install:
   - pip install -U pytest
 
 
-script: pytest test.py
+script: python3.8 -m pytest -vvv /OSS_project/tests/
