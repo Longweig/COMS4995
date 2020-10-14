@@ -11,7 +11,7 @@ before_install:
   - pip install requests
   - pip install flake8 codecov pytest pytest-cov
   
-script: - pytest OSS_project/
+script: pytest OSS_project/tests
         
 
   
