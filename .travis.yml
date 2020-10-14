@@ -2,12 +2,17 @@ language: python
 python:
   - 3.7
   - 3.8
+cache: pip
 before_install:
   - python --version
   - pip install -U pip
-  - pip install -U pytest
   - pip install -U flask
   - pip install requests
+  - pip install flake8 codecov pytest pytest-cov
+  
+script: - python -m flake8 OSS_project/
+        pytest OSS_project/
+        pytest --cov OSS_project
 
-
-script: pytest OSS_project/tests
+after_success:
+  - codecov
