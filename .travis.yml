@@ -14,7 +14,8 @@ before_install:
 script: - pytest OSS_project/
         - pytest --cov OSS_project
 
+
 after_success:
-  - codecov
+  - bash <(curl -s https://codecov.io/bash)
 
   
