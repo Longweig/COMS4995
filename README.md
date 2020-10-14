@@ -1,9 +1,14 @@
-# FreeBooks
-![GitHub](https://img.shields.io/github/license/Longweig/FreeBooks) ![GitHub issues](https://img.shields.io/github/issues/Longweig/FreeBooks) 
-![Travis (.com)](https://img.shields.io/travis/com/Longweig/FreeBooks) ![GitHub last commit](https://img.shields.io/github/last-commit/Longweig/FreeBooks?logo=Github)
+# FreeFree
+![GitHub](https://img.shields.io/github/license/Longweig/FreeFree) ![GitHub issues](https://img.shields.io/github/issues/Longweig/FreeFree) 
+![Travis (.com)](https://img.shields.io/travis/com/Longweig/FreeFree) ![GitHub last commit](https://img.shields.io/github/last-commit/Longweig/FreeFree?logo=Github)
 ### Motivations
+There are always some books that we don't need anymore but someone may want them. Although we can use second-hand platform to sell the books, sometimes we may want to just give or even throw them away since there is no insufficient space to store them. Also, sometimes we want some books for temporary use but it's a waste to buy them. A free book give-way platform will help these people especially for students to get the books they need and give away the books then unwanted.
 
 ### What is it
-This applicaion that aims to help pet owers better orgnize information about their pets by recording pet life and communicating with other pet owners. The users can record their pets' health conditions, medications or vaccinations to better take care of them. Also, they can record the happy time with their puppies and share the photos or videos. This app can be used as a pet diary and even a platform to find new friends for your pets.
+This web applicaion that aims to help people to get books they want for free. People can sign up to be a user and get the notifications of the availibilities to the books they need. Also, based on their locations some items have higher priorities to be recommended. Uses can use wishlist of ISBN number or book info to note which books they need. It's a good way to help and benefit each other.
+
+### More features
+1. More items (like furniture, pet products) to be in the list
+2. Based on the owners' intention, some items can be provided with a second-hand trading platform
 
 
