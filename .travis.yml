@@ -15,4 +15,5 @@ script: - python -m flake8 OSS_project/
         - pytest --cov OSS_project
 
 after_success:
-  - codecov
+  - bash <(curl -s https://codecov.io/bash)
+  
