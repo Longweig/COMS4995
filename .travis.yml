@@ -12,7 +12,7 @@ before_install:
   - pip install flake8 codecov pytest pytest-cov
   
 script: 
-  - python -m flake8 OSS_project/
+  - python -m flake8 OSS_project/ --exclude=OSS_project/app/web/__init__.py
   - python -m pytest OSS_project/tests --cov OSS_project
 
 after_success:
