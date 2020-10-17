@@ -19,4 +19,3 @@ class HTTP:
                 return r.json()
             else:
                 return r.text
-            

@@ -2,7 +2,6 @@
 # @author: lw_guo
 # @time: 2020/10/13
 from book_item import Book
-import pytest
 
 
 def test_seacrh_by_isbn():
@@ -12,6 +11,7 @@ def test_seacrh_by_isbn():
     res2 = Book.search_by_isbn(isbn_not_found)
     assert res1['author']
     assert res2['msg'] == 'book not found'
+
 
 def test_seach_by_key():
     key_found = 'Machine Learning'

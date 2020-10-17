@@ -7,6 +7,7 @@ from book_item import Book
 from . import web
 from helper import is_isbn_or_key
 
+
 @web.route('/')
 def home():
     return 'OK', 200
