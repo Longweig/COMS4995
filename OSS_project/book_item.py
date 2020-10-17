@@ -19,4 +19,3 @@ class Book:
         url = cls.isbn_url.format(isbn)
         result = HTTP.get(url)
         return result
-    

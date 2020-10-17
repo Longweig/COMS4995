@@ -5,8 +5,9 @@
 def test_config(app):
     assert not app.testing
     assert app.debug
-    app.config.update({'TESTING':True})
+    app.config.update({'TESTING': True})
     assert app.testing
+
 
 def test_app(client):
     res = client.get('/')
