@@ -5,8 +5,8 @@ from http_helper import HTTP
 
 
 class Book:
-    isbn_url = 'http://t.yushu.im/v2/book/isbn/{}'
-    keyword_url = 'http://t.yushu.im/v2/book/search?q={}&count={}&start={}'
+    isbn_url = 'http://t.talelin.com/v2/book/isbn/{}'
+    keyword_url = 'http://t.talelin.com/v2/book/search?q={}&count={}&start={}'
 
     @classmethod
     def search_by_keyword(cls, q, count=20, start=0):
