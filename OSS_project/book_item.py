@@ -6,7 +6,6 @@ from http_helper import HTTP
 
 class Book:
     isbn_url = 'http://t.talelin.com/v2/book/isbn/{}'
-    
     keyword_url = 'http://t.talelin.com/v2/book/search?q={}&count={}&start={}'
 
     @classmethod
