@@ -1,13 +1,10 @@
-"""
-helper.py
-====================================
-Helper Functions
-"""
-
 def is_isbn_or_key(word):
-    """
-    :param word:
-    :return:
+    """ Determine word is `key` or `isbn`
+
+    :param word: query keywords returning from HTTP response
+    :type word: string
+    :return: `isbn` or `key` label
+    :rtype: string
     """
     isbn_or_key = 'key'
 

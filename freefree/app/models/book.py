@@ -3,9 +3,10 @@
 # @time: 2020/11/3
 
 from sqlalchemy import Column, Integer, String
-from flask_sqlalchemy import  SQLAlchemy
+from flask_sqlalchemy import SQLAlchemy
 
 db = SQLAlchemy()
+
 
 class Book(db.Model):
     id = Column(Integer, primary_key=True, autoincrement=True)
@@ -19,7 +20,6 @@ class Book(db.Model):
     isbn = Column(String(15), nullable=False, unique=True)
     summary = Column(String(1000))
     image = Column(String(50))
-
 
     def sample(self):
         pass

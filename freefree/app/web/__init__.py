@@ -4,9 +4,9 @@ from flask import Blueprint
 
 web = Blueprint('web', __name__)
 
-from app.web import book
-from app.web import auth
-from app.web import drift
-from app.web import gift
-from app.web import main
-from app.web import wish
+from freefree.app.web import book
+from freefree.app.web import auth
+from freefree.app.web import drift
+from freefree.app.web import gift
+from freefree.app.web import main
+from freefree.app.web import wish

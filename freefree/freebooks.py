@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 # -*- coding:utf-8 -*-
 
-from app import create_app
+from freefree.app import create_app
 
 
 app = create_app()
