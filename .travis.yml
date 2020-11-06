@@ -15,8 +15,8 @@ before_install:
   
 script: 
   - python -m flake8 freefree/ \
-              --ignore W291 \
-              --exclude .git,__pycache__,freefree/app/web/__init__.py
+              --exclude freefree/app/web/__init__.py \
+              --ignore=W291
   - python -m pytest tests --cov freefree/app
 
 after_success:
