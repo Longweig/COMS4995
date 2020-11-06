@@ -2,12 +2,12 @@
 # @author: lw_guo
 # @time: 2020/10/13
 import pytest
-from freefree.app import create_app
+from tests.myapp import create_app
 
 
-@pytest.fixture()
+@pytest.fixture
 def app():
-    app = create_app()
+    app = create_app('../freefree/app/setting.py')
     return app
 
 
