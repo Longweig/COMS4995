@@ -1,9 +1,4 @@
-"""
-book_item.py
-====================================
-Book Operations Object
-"""
-from app.libs.http_helper import HTTP
+from freefree.app.libs.http_helper import HTTP
 from flask import current_app
 
 
@@ -14,14 +9,13 @@ class Book:
         search_by_keyword or search_by_isbn. When it is
         result from search_by_isbn, `total` is 0 if the result
         is null and 1 if the item is found.
-    :type total: integer
+    :type total: int
     :param books: A list of possible book records in json format.
     :type books: list
     """
 
     isbn_url = 'http://t.talelin.com/v2/book/isbn/{}'
-    keyword_url = 'http://t.talelin.com/v2/book/search?q={}&count={}&start={}'  
-    """ Outside URLs for tracking book information based on ISBN number and keyword"""
+    keyword_url = 'http://t.talelin.com/v2/book/search?q={}&count={}&start={}'
 
     def __init__(self):
         """Constructor method

@@ -1,7 +1,3 @@
-# -*- coding:utf-8 -*-
-# @author: lw_guo
-# @time: 2020/10/13
-
 from flask import jsonify, request, flash, render_template
 from app.forms.book import SearchForm
 from app.spider.book_item import Book
