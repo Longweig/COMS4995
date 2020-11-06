@@ -10,10 +10,11 @@ before_install:
   - pip install -U flask
   - pip install requests
   - pip install sqlalchemy
+  - pip install flask_sqlalchemy
   - pip install flake8 codecov pytest pytest-cov
   
 script: 
-  - python -m flake8freefree/ --ignore=W291 --exclude=freefree/app/web/__init__.py
+  - python -m flake8 freefree/ --ignore=W291 --exclude=freefree/app/web/__init__.py
   - python -m pytest /tests --cov freefree/app
 
 after_success:
