@@ -14,7 +14,7 @@ before_install:
   - pip install flake8 codecov pytest pytest-cov
   
 script: 
-  - flake8 --ignore=W291 freefree/ --exclude=freefree/app/web/__init__.py freefree/
+  - flake8 --ignore=W291 --exclude=freefree/app/web/__init__.py freefree/
     
   - python -m pytest tests --cov freefree/app
 
