@@ -2,7 +2,7 @@
 # @author: lw_guo
 # @time: 2020/10/13
 import pytest
-from app import create_app
+from freefree.app import create_app
 
 
 @pytest.fixture()

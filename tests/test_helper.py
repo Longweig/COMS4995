@@ -2,8 +2,8 @@
 # @author: lw_guo
 # @time: 2020/10/13
 import pytest
-from app.libs.helper import is_isbn_or_key
-from app.libs.http_helper import HTTP
+from freefree.app.libs.helper import is_isbn_or_key
+from freefree.app.libs.http_helper import HTTP
 
 
 @pytest.mark.parametrize("test_input,expected",

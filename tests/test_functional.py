@@ -1,7 +1,7 @@
 # -*- coding:utf-8 -*-
 # @author: lw_guo
 # @time: 2020/10/13
-from app.spider.book_item import Book
+from freefree.app.spider.book_item import Book
 
 
 def test_seacrh_by_isbn():
