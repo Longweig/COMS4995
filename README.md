@@ -1,7 +1,7 @@
 # FreeFree
 ![GitHub](https://img.shields.io/github/license/Longweig/FreeFree) 
 ![GitHub issues](https://img.shields.io/github/issues-raw/Longweig/FreeFree)
-[![Build Status](https://travis-ci.com/Longweig/FreeFree.svg?branch=master)](https://travis-ci.com/Longweig/FreeFree) 
+[![Build Status](https://travis-ci.com/Longweig/FreeFree.svg?branch=master)](https://travis-ci.com/Longweig/FreeFree)
 ![GitHub last commit](https://img.shields.io/github/last-commit/Longweig/FreeFree) 
 ![codecov](https://codecov.io/gh/Longweig/FreeFree/branch/master/graph/badge.svg?token=W937X95APO)
 [![Documentation Status](https://readthedocs.org/projects/freefree/badge/?version=latest)](https://freefree.readthedocs.io/en/latest/?badge=latest)
