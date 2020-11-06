@@ -18,6 +18,13 @@ This web applicaion that aims to help people to get books they want for free. Pe
 ```eval_rst
 .. autoclass:: spider.book_item.Book
     :members:
+.. autoclass:: view_models.book.BookViewModel
+    :members:
+.. autoclass:: view_models.book.BookCollection
+    :members:
+.. autofunction:: libs.helper.is_isbn_or_key
+.. autoclass:: libs.http_helper.HTTP
+    :members:
 ```
 
 

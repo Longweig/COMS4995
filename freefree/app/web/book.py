@@ -1,10 +1,9 @@
-from flask import jsonify, request, flash, render_template
-from app.forms.book import SearchForm
-from app.spider.book_item import Book
-from app.view_models.book import BookViewModel, BookCollection
-from app.web import web
-import json
-from app.libs.helper import is_isbn_or_key
+from flask import request, flash, render_template
+from freefree.app.forms.book import SearchForm
+from freefree.app.spider.book_item import Book
+from freefree.app.view_models.book import BookCollection
+from freefree.app.web import web
+from freefree.app.libs.helper import is_isbn_or_key
 
 
 @web.route('/')

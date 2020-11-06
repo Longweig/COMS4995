@@ -38,9 +38,11 @@ class Book:
         self.__fill_collection(result)
 
     def search_by_isbn(self, isbn):
-        """Get formatted HTTP response by isbn number and record it in the `books` attribute.
+        """Get formatted HTTP response by isbn number \
+        and record it in the `books` attribute.
 
-        :param isbn: The unique ID number in specific format of books used for search. 
+        :param isbn: The unique ID number \
+        in specific format of books used for search.
         :type isbn: string
         """
         url = self.isbn_url.format(isbn)
@@ -68,9 +70,12 @@ class Book:
         self.total = data['total']
         self.books = data['books']
 
-    def calculate_start(self, page):
-        """Returns an integer representing the `start` fitting in outside API function.
-        Calculate the `start` index of the API function parameter by `page` and `PER_PAGE`.
+    @staticmethod
+    def calculate_start(page):
+        """Returns an integer representing the `start` \
+        fitting in outside API function.
+        Calculate the `start` index of the \
+        API function parameter by `page` and `PER_PAGE`.
 
         :param page: Specified page number
         :type page: int

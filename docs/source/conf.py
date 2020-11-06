@@ -12,8 +12,8 @@
 #
 import os
 import sys
-sys.path.insert(0, os.path.abspath('../../freefree/app/'))
 
+sys.path.insert(0, os.path.abspath('../../freefree/app/'))
 
 # -- Project information -----------------------------------------------------
 
@@ -26,13 +26,17 @@ release = '0.0.1'
 
 from recommonmark.transform import AutoStructify
 from sphinx.ext.autodoc import cut_lines
+
+
 def setup(app):
     app.add_config_value('recommonmark_config', {
         'auto_toc_tree_section': 'Contents',
     }, True)
     app.add_transform(AutoStructify)
-    
+
     app.connect('autodoc-process-docstring', cut_lines(9, what=['class']))
+
+
 # -- General configuration ---------------------------------------------------
 
 # Add any Sphinx extension module names here, as strings. They can be
@@ -41,7 +45,7 @@ def setup(app):
 extensions = ['recommonmark', 'sphinx.ext.coverage', 'sphinx.ext.napoleon']
 extensions.append('sphinx.ext.autodoc')
 source_suffix = ['.rst', '.md']
-autodoc_mock_imports = ["flask","app"]
+autodoc_mock_imports = ["flask", "freefree"]
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']
 
@@ -50,16 +54,15 @@ templates_path = ['_templates']
 # This pattern also affects html_static_path and html_extra_path.
 exclude_patterns = []
 
-
 # -- Options for HTML output -------------------------------------------------
 
 # The theme to use for HTML and HTML Help pages.  See the documentation for
 # a list of builtin themes.
-#
 import sphinx_rtd_theme
+
 html_theme = "sphinx_rtd_theme"
 html_theme_path = [sphinx_rtd_theme.get_html_theme_path()]
-#html_theme = 'alabaster'
+# html_theme = 'alabaster'
 
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,
