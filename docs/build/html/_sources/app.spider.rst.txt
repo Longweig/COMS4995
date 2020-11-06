@@ -1,0 +1,21 @@
+app.spider package
+==================
+
+Submodules
+----------
+
+app.spider.book\_item module
+----------------------------
+
+.. automodule:: app.spider.book_item
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+Module contents
+---------------
+
+.. automodule:: app.spider
+   :members:
+   :undoc-members:
+   :show-inheritance:
