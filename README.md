@@ -16,4 +16,6 @@ This web applicaion that aims to help people to get books they want for free. Pe
 1. More items (like furniture, pet products) to be in the list
 2. Based on the owners' intention, some items can be provided with a second-hand trading platform
 
-
+### Simple Demo (More details will be added)
+- Search details
+![Search details for "Java"](https://github.com/Longweig/FreeFree/blob/master/image/Screeshot1.png)
