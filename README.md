@@ -18,20 +18,20 @@ This web applicaion that aims to help people to get books they want for free. Pe
 
 ### Simple Demo (More details will be added)
 - Search details (keywords: Java)
-<img src="https://github.com/Longweig/FreeFree/blob/master/image/search_detail.png" width="40%">
+<img src="https://github.com/Longweig/FreeFree/blob/master/image/search_detail.png" width="70%">
 
 - Book details 
-![title|small](https://github.com/Longweig/FreeFree/blob/master/image/book_detail.png){width=10px}                                                                                                                                  
+<img src="https://github.com/Longweig/FreeFree/blob/master/image/book_detail.png" width="70%">                                                                                                                        
 
 - User Login 
-![title|small](https://github.com/Longweig/FreeFree/blob/master/image/user_login.png){width=10px}   
+<img src="https://github.com/Longweig/FreeFree/blob/master/image/user_login.png" width="70%"> 
 
 - User Account
-![title|small](https://github.com/Longweig/FreeFree/blob/master/image/user_account.png){width=10px}   
+<img src="https://github.com/Longweig/FreeFree/blob/master/image/user_account.png" width="70%"> 
 
     
 - Gift List
-![title|small](https://github.com/Longweig/FreeFree/blob/master/image/giftlist.png)    
+<img src="https://github.com/Longweig/FreeFree/blob/master/image/giftlist.png" width="70%">    
    
 - Wish List
-![title|small](https://github.com/Longweig/FreeFree/blob/master/image/wishlist.png)    
+<img src="https://github.com/Longweig/FreeFree/blob/master/image/wishlist.png" width="70%"> 
