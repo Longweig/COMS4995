@@ -44,7 +44,7 @@ def withdraw_from_gifts(gid):
         gift_id=gid, pending=PendingStatus.WAITING).first()
     if drift:
         flash('This gift is in transaction now. '
-        'Please complete this order first.')
+              'Please complete this order first.')
     else:
         with db.auto_commit():
             current_user.beans -= current_app.config['BEANS_UPLOAD_ONE_BOOK']
