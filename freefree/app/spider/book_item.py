@@ -62,8 +62,7 @@ class Book:
 
     def __fill_collection(self, data):
         """Append the whole records searched by keywords 
-        in the HTTP response to the `books` attribute. 
-
+        in the HTTP response to the `books` attribute.
         :param data: Results getting from formatted HTTP requests
         :type data: json format records or ''
         """
@@ -83,3 +82,7 @@ class Book:
         :rtype: int
         """
         return (page - 1) * current_app.config['PER_PAGE']
+
+    @property
+    def first(self):
+        return self.books[0] if self.total >= 1 else None

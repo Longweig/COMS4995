@@ -3,9 +3,7 @@
 # @time: 2020/11/3
 
 from sqlalchemy import Column, Integer, String
-from flask_sqlalchemy import SQLAlchemy
-
-db = SQLAlchemy()
+from freefree.app.models.base import db
 
 
 class Book(db.Model):

@@ -16,14 +16,18 @@ class BookViewModel:
     :param image: images of book
     :type image: string
     """
+
     def __init__(self, book):
         self.title = book['title']
         self.publisher = book['publisher']
-        self.author = ','.join(book['author']),
-        self.pages = book['pages'] or '',
-        self.price = book['price'],
-        self.summary = book['summary'] or '',
+        self.author = '、'.join(book['author'])
+        self.pages = book['pages'] or ''
+        self.price = book['price']
+        self.isbn = book['isbn']
+        self.summary = book['summary'] or ''
         self.image = book['image']
+        self.pubdate = book['pubdate']
+        self.binding = book['binding']
 
     @property
     def intro(self):
@@ -37,7 +41,8 @@ class BookViewModel:
         """
         intros = filter(lambda x: True if x else False,
                         [self.author, self.publisher, self.price])
-        return '/'.join(intros)
+
+        return ' / '.join(intros)
 
 
 class BookCollection:
@@ -52,6 +57,7 @@ class BookCollection:
     :param keyword: keyword used for
     searching for such book collection
     """
+
     def __init__(self):
         """Constructor Method"""
         self.total = 0
@@ -70,3 +76,59 @@ class BookCollection:
         self.total = book_item.total
         self.keyword = keyword
         self.books = [BookViewModel(book) for book in book_item.books]
+
+
+class _BookViewModel:
+    @classmethod
+    def package_single(cls, data, keyword):
+        returned = {
+            'books': [],
+            'total': 0,
+            'keyword': keyword
+        }
+        if data:
+            returned['total'] = 1
+            returned['books'] = [cls.__cut_book_data(data)]
+        return returned
+
+    @classmethod
+    def package_collection(cls, data, keyword):
+        returned = {
+            'books': [],
+            'total': 0,
+            'keyword': keyword
+        }
+        if data:
+            returned['total'] = data['total']
+            returned['books'] = [cls.__cut_book_data(book)
+                                 for book in data['books']]
+        return returned
+
+    @classmethod
+    def __cut_book_data(cls, data):
+        book = {
+            'title': data['title'],
+            'publisher': data['publisher'],
+            'pages': data['pages'] or '',
+            'author': '、'.join(data['author']),
+            'price': data['price'],
+            'summary': data['summary'] or '',
+            'image': data['image']
+        }
+        return book
+
+    @classmethod
+    def __cut_books_data(cls, data):
+        books = []
+        for book in data['books']:
+            r = {
+                'title': book['title'],
+                'publisher': book['publisher'],
+                'pages': book['pages'],
+                'author': '****'.join(book['author']),
+                'price': book['price'],
+                'summary': book['summary'],
+                'image': book['image']
+            }
+            books.append(r)
+        return books
