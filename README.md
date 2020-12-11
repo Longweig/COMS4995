@@ -18,7 +18,7 @@ This web applicaion that aims to help people to get books they want for free. Pe
 
 ### Simple Demo (More details will be added)
 - Search details (keywords: Java)
-![title|small](https://github.com/Longweig/FreeFree/blob/master/image/search_detail.png){width=10px}
+<img src="https://github.com/Longweig/FreeFree/blob/master/image/search_detail.png" width="40%">
 
 - Book details 
 ![title|small](https://github.com/Longweig/FreeFree/blob/master/image/book_detail.png){width=10px}                                                                                                                                  
