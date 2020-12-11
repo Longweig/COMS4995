@@ -97,8 +97,7 @@ class User(Base, UserMixin):
             beans=self.beans,
             email=self.email,
             send_recieve=str(self.send_counter)
-                         + '/' + str(self.receive_counter)
-        )
+                         + '/' + str(self.receive_counter))
 
 
 @login_manager.user_loader
