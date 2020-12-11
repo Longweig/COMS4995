@@ -17,7 +17,21 @@ This web applicaion that aims to help people to get books they want for free. Pe
 2. Based on the owners' intention, some items can be provided with a second-hand trading platform
 
 ### Simple Demo (More details will be added)
-- Search details
-<div align=center>
-  <img src="https://github.com/Longweig/FreeFree/blob/master/image/Screeshot1.png" width = "700" height = "400" alt="Search "Java" />
-</div>
+- Search details (keywords: Java)
+![title|small](https://github.com/Longweig/FreeFree/blob/master/image/search_detail.png){width=10px}
+
+- Book details 
+![title|small](https://github.com/Longweig/FreeFree/blob/master/image/book_detail.png){width=10px}                                                                                                                                  
+
+- User Login 
+![title|small](https://github.com/Longweig/FreeFree/blob/master/image/user_login.png){width=10px}   
+
+- User Account
+![title|small](https://github.com/Longweig/FreeFree/blob/master/image/user_account.png){width=10px}   
+
+    
+- Gift List
+![title|small](https://github.com/Longweig/FreeFree/blob/master/image/giftlist.png)    
+   
+- Wish List
+![title|small](https://github.com/Longweig/FreeFree/blob/master/image/wishlist.png)    
