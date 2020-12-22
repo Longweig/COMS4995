@@ -20,7 +20,7 @@ def send_email(to, subject, template, **kwargs):
                   sender=current_app.config['MAIL_USERNAME'],
                   recipients=[to])
     msg.html = render_template(template, **kwargs)
-    # mail.send(msg)
     app = current_app._get_current_object()
     thr = Thread(target=send_async_email, args=[app, msg])
     thr.start()
+    return msg

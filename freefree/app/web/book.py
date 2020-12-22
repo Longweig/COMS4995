@@ -25,7 +25,8 @@ def search():
         if isbn_or_key == 'isbn':
             book.search_by_isbn(q)
         else:
-            book.search_by_keyword(q, page)
+            # book.search_by_keyword(q, page)
+            book.search_by_keyword(q)
 
         books.fill(book, q)
 

@@ -46,11 +46,11 @@ class Auth {
         var rightEmail = v.isEmail(email)
         var rightPassword = self.that.isCorrcetPassword(password)
         if (!rightEmail) {
-            self.that.reflectToView('#email', '请输入正确的邮箱地址')
+            self.that.reflectToView('#email', 'Please check your email address.')
             return false
         }
         if (!rightPassword) {
-            self.that.reflectToView('#password', '密码必须保持在6到30位之间')
+            self.that.reflectToView('#password', 'Password length should be between 6 to 30 characters.')
             return false
         }
         return true

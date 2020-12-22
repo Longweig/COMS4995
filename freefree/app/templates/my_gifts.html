@@ -6,7 +6,7 @@
     {{ super() }}
     <div class="row flex-vertical-center">
         <div style="margin-top:20px;" class="col-md-6">
-            <span class="sub-title">我想赠送的书籍  共  {{ gifts | length }} 本</span>
+            <span class="sub-title">Books for GIVING :   {{ gifts | length }} items </span>
             <hr>
         </div>
     </div>
@@ -22,20 +22,20 @@
                                   class="book-middle-title">{{ gift.book.title }}</span>
                         <div style="margin-top:6px;"
                              class="flex-vertical description-font">
-                            <span id="author">{{ gift.book.author }}</span>
-                            <span id="publisher">{{ gift.book.publisher }}</span>
-                            <span id="price">{{ gift.book.price }}</span>
-                            <span id="isbn">{{ gift.book.isbn }}</span>
+                            <span id="author">Author: {{ gift.book.author }}</span>
+                            <span id="publisher">Publisher: {{ gift.book.publisher }}</span>
+                            <span id="price">Price: {{ gift.book.price }}</span>
+                            <span id="isbn">ISBN: {{ gift.book.isbn }}</span>
                         </div>
                         <a class="link-normal"
                            href="{{ url_for('web.withdraw_from_gifts', gid=gift.id) }}">
-                            撤销
+                            Withdraw
                         </a>
                     </div>
                     <div class="col-md-3 flex-vertical">
                         {% if gift.wishes_count %}
                             <a href="{{ url_for('web.book_detail', isbn=gift.book.isbn) }}">
-                                <span class="bg-info">{{ gift.wishes_count }}人想要</span>
+                                <span class="bg-info">{{ gift.wishes_count }}  WANT</span>
 
                             </a>
                         {% endif %}

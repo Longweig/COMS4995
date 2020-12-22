@@ -10,25 +10,25 @@ class Drift(Base):
     id = Column(Integer, primary_key=True)
 
     # shipping info
-    recipient_name = Column(String(20), nullable=False)
-    address = Column(String(100), nullable=False)
+    recipient_name = Column(String(50), nullable=False)
+    address = Column(String(200), nullable=False)
     message = Column(String(200))
     mobile = Column(String(20), nullable=False)
 
     # book info
     isbn = Column(String(13))
     book_tile = Column(String(50))
-    book_author = Column(String(30))
-    book_img = Column(String(50))
+    book_author = Column(String(128))
+    book_img = Column(String(1280))
 
     # requester info
     requester_id = Column(Integer)
-    requester_nickname = Column(String(20))
+    requester_nickname = Column(String(50))
 
     # giver info
     gifter_id = Column(Integer)
     gift_id = Column(Integer)
-    gifter_nickname = Column(String(20))
+    gifter_nickname = Column(String(50))
 
     _pending = Column('pending', SmallInteger, default=1)
 

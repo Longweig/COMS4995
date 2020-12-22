@@ -5,6 +5,7 @@ from sqlalchemy import Column, Integer, Boolean, ForeignKey, String, desc, func
 from freefree.app.models.base import Base, db
 from sqlalchemy.orm import relationship
 from freefree.app.spider.book_item import Book
+from freefree.app.view_models.book import BookViewModel
 
 
 class Wish(Base):
@@ -15,6 +16,7 @@ class Wish(Base):
     # book = relationship('Book')
     # bid = Column(Integer, ForeignKey('book.id'))
     launched = Column(Boolean, default=False)
+
 
     @classmethod
     def get_user_wishes(cls, uid):
@@ -38,5 +40,8 @@ class Wish(Base):
         book_model.search_by_isbn(self.isbn)
         return book_model.first
 
+    @property
+    def reset_book(self):
+        return BookViewModel(self.book)
 
 from freefree.app.models.gift import Gift

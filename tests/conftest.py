@@ -7,7 +7,9 @@ from tests.myapp import create_app
 
 @pytest.fixture
 def app():
-    app = create_app('../freefree/app/setting.py')
+    app = create_app()
+    app.config.from_pyfile('../freefree/app/secure.py')
+    app.config.from_pyfile('../freefree/app/setting.py')
     return app
 
 

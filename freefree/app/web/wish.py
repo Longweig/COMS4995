@@ -5,6 +5,7 @@ from ..models.gift import Gift
 from ..models.wish import Wish
 from flask import flash, redirect, url_for, render_template
 from ..libs.email import send_email
+from ..view_models.book import BookViewModel
 from ..view_models.trade import MyTrades
 
 
@@ -48,7 +49,7 @@ def satisfy_wish(wid):
                    'email/satisify_wish.html',
                    wish=wish,
                    gift=gift)
-        flash('Sent email to him/her.'
+        flash('Sent email to him/her. '
               'If he/she agrees to accept your gift, '
               'you will receive a drift then.')
     return redirect(url_for('web.book_detail', isbn=wish.isbn))

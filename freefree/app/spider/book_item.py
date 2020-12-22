@@ -14,8 +14,12 @@ class Book:
     :type books: list
     """
 
-    isbn_url = 'http://t.talelin.com/v2/book/isbn/{}'
-    keyword_url = 'http://t.talelin.com/v2/book/search?q={}&count={}&start={}'
+    # isbn_url = 'http://t.talelin.com/v2/book/isbn/{}'
+    # keyword_url = 'http://t.talelin.com/v2/book/search?q={}&count={}&start={}'
+
+    # google api
+    isbn_url = 'https://www.googleapis.com/books/v1/volumes?q={}+isbn'
+    keyword_url = 'https://www.googleapis.com/books/v1/volumes?q={}'
 
     def __init__(self):
         """Constructor method
@@ -23,17 +27,22 @@ class Book:
         self.total = 0
         self.books = []
 
-    def search_by_keyword(self, q, page=1):
-        """Get formatted HTTP response by keword `q` and specified page number `page`
-        and record results in `books` attribute.
+    # def search_by_keyword(self, q, page=1):
+    #     """Get formatted HTTP response by keword `q` and specified page number `page`
+    #     and record results in `books` attribute.
+    #
+    #     :param q: Keywords for searching books.
+    #     :type q: string
+    #     :param page: Searched page numbe, defaults to 1.
+    #     :type page: int
+    #     """
+    #     url = self.keyword_url.format(q, current_app.config['PER_PAGE'],
+    #                                   self.calculate_start(page))
+    #     result = HTTP.get(url)
+    #     self.__fill_collection(result)
 
-        :param q: Keywords for searching books.
-        :type q: string
-        :param page: Searched page numbe, defaults to 1. 
-        :type page: int
-        """
-        url = self.keyword_url.format(q, current_app.config['PER_PAGE'],
-                                      self.calculate_start(page))
+    def search_by_keyword(self, q):
+        url = self.keyword_url.format(q)
         result = HTTP.get(url)
         self.__fill_collection(result)
 
@@ -58,16 +67,29 @@ class Book:
         """
         if data:
             self.total = 1
-            self.books.append(data)
+            # self.books.append(data)
+            # for google_json
+            self.books.append(data['items'][0])
 
+    # def __fill_collection(self, data):
+    #     """Append the whole records searched by keywords
+    #     in the HTTP response to the `books` attribute.
+    #     :param data: Results getting from formatted HTTP requests
+    #     :type data: json format records or ''
+    #     """
+    #     self.total = data['total']
+    #     self.books = data['books']
+
+    # google
     def __fill_collection(self, data):
-        """Append the whole records searched by keywords 
+        """Append the whole records searched by keywords
         in the HTTP response to the `books` attribute.
         :param data: Results getting from formatted HTTP requests
         :type data: json format records or ''
         """
-        self.total = data['total']
-        self.books = data['books']
+        if data:
+            self.total = data['totalItems']
+            self.books = data['items']
 
     @staticmethod
     def calculate_start(page):

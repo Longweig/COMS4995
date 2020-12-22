@@ -111,7 +111,7 @@ def save_drift(drift_form, current_gift):
         drift.gifter_id = current_gift.user.id
         book = BookViewModel(current_gift.book)
         drift.book_tile = book.title
-        drift.book_author = book.author
+        drift.book_author = book.author.split(',')[0]
         drift.book_img = book.image
         drift.isbn = book.isbn
 

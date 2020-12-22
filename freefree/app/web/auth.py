@@ -49,8 +49,8 @@ def forget_password_request():
                        'email/reset_password.html',
                        user=user,
                        token=user.generate_token())
-            flash('We have sent a verification email to ' 
-                  + account_email
+            flash('We have sent a verification email to ' +
+                  account_email
                   + '. Please check it to reset your password.')
     return render_template('auth/forget_password_request.html', form=form)
 

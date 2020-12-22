@@ -15,10 +15,10 @@ class Pagination {
             totalPages: total,
             visiblePages: visbleCount,
             onPageClick: self.that.onPageClick,
-            first: '首页',
-            last: '尾页',
-            next:'后页>',
-            prev:'<前页'
+            first: 'First',
+            last: 'Last',
+            next:'>',
+            prev:'<'
         })
     }
 

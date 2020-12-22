@@ -17,17 +17,18 @@ class BookViewModel:
     :type image: string
     """
 
+
     def __init__(self, book):
-        self.title = book['title']
-        self.publisher = book['publisher']
-        self.author = '、'.join(book['author'])
-        self.pages = book['pages'] or ''
-        self.price = book['price']
-        self.isbn = book['isbn']
-        self.summary = book['summary'] or ''
-        self.image = book['image']
-        self.pubdate = book['pubdate']
-        self.binding = book['binding']
+        self.title = book["volumeInfo"]['title']
+        self.publisher = book["volumeInfo"].get('publisher', 'Unknown')
+        self.author = ', '.join(book["volumeInfo"]['authors'])
+        self.pages = book["volumeInfo"].get('pageCount', 'Unknown')
+        self.price = self._price(book=book)
+        self.isbn = self._isbn(book=book)
+        self.summary = book['volumeInfo'].get('description', 'Unknown')
+        self.image = book['volumeInfo']['imageLinks']['thumbnail']
+        self.pubdate = book['volumeInfo'].get('publishedDate', 'Unknown')
+        self.binding = book['volumeInfo']['printType']
 
     @property
     def intro(self):
@@ -43,6 +44,22 @@ class BookViewModel:
                         [self.author, self.publisher, self.price])
 
         return ' / '.join(intros)
+
+    def _price(self, book):
+        if book["saleInfo"]["saleability"] == 'FOR_SALE':
+            price = str(book['saleInfo']['retailPrice']['amount'])
+            return (price +
+                    book['saleInfo']['retailPrice']['currencyCode'])
+        else:
+            return 'Unknown'
+
+    def _isbn(self, book):
+        isbns = book["volumeInfo"]['industryIdentifiers']
+        for item in isbns:
+            if item['type'] == 'ISBN_13':
+                return item['identifier']
+
+
 
 
 class BookCollection:
@@ -64,6 +81,7 @@ class BookCollection:
         self.books = []
         self.keyword = ''
 
+
     def fill(self, book_item, keyword):
         """Fill the `BookViewModel` objects into
         `books` attribute
@@ -78,57 +96,57 @@ class BookCollection:
         self.books = [BookViewModel(book) for book in book_item.books]
 
 
-class _BookViewModel:
-    @classmethod
-    def package_single(cls, data, keyword):
-        returned = {
-            'books': [],
-            'total': 0,
-            'keyword': keyword
-        }
-        if data:
-            returned['total'] = 1
-            returned['books'] = [cls.__cut_book_data(data)]
-        return returned
-
-    @classmethod
-    def package_collection(cls, data, keyword):
-        returned = {
-            'books': [],
-            'total': 0,
-            'keyword': keyword
-        }
-        if data:
-            returned['total'] = data['total']
-            returned['books'] = [cls.__cut_book_data(book)
-                                 for book in data['books']]
-        return returned
-
-    @classmethod
-    def __cut_book_data(cls, data):
-        book = {
-            'title': data['title'],
-            'publisher': data['publisher'],
-            'pages': data['pages'] or '',
-            'author': '、'.join(data['author']),
-            'price': data['price'],
-            'summary': data['summary'] or '',
-            'image': data['image']
-        }
-        return book
-
-    @classmethod
-    def __cut_books_data(cls, data):
-        books = []
-        for book in data['books']:
-            r = {
-                'title': book['title'],
-                'publisher': book['publisher'],
-                'pages': book['pages'],
-                'author': '****'.join(book['author']),
-                'price': book['price'],
-                'summary': book['summary'],
-                'image': book['image']
-            }
-            books.append(r)
-        return books
+# class _BookViewModel:
+#     @classmethod
+#     def package_single(cls, data, keyword):
+#         returned = {
+#             'books': [],
+#             'total': 0,
+#             'keyword': keyword
+#         }
+#         if data:
+#             returned['total'] = 1
+#             returned['books'] = [cls.__cut_book_data(data)]
+#         return returned
+#
+#     @classmethod
+#     def package_collection(cls, data, keyword):
+#         returned = {
+#             'books': [],
+#             'total': 0,
+#             'keyword': keyword
+#         }
+#         if data:
+#             returned['total'] = data['total']
+#             returned['books'] = [cls.__cut_book_data(book)
+#                                  for book in data['books']]
+#         return returned
+#
+#     @classmethod
+#     def __cut_book_data(cls, data):
+#         book = {
+#             'title': data['title'],
+#             'publisher': data['publisher'],
+#             'pages': data['pages'] or '',
+#             'author': '、'.join(data['author']),
+#             'price': data['price'],
+#             'summary': data['summary'] or '',
+#             'image': data['image']
+#         }
+#         return book
+#
+#     @classmethod
+#     def __cut_books_data(cls, data):
+#         books = []
+#         for book in data['books']:
+#             r = {
+#                 'title': book['title'],
+#                 'publisher': book['publisher'],
+#                 'pages': book['pages'],
+#                 'author': '****'.join(book['author']),
+#                 'price': book['price'],
+#                 'summary': book['summary'],
+#                 'image': book['image']
+#             }
+#             books.append(r)
+#         return books

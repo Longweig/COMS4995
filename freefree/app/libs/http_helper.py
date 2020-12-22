@@ -21,7 +21,7 @@ class HTTP:
         r = requests.get(url)
         if r.status_code != 200:
             if return_json:
-                return r.json()
+                return {}
             else:
                 return ''
         else:

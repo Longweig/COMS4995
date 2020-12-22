@@ -6,6 +6,7 @@ from sqlalchemy import Column, Integer, Boolean, ForeignKey, String, desc, func
 from freefree.app.models.base import Base, db
 from sqlalchemy.orm import relationship
 from freefree.app.spider.book_item import Book
+from freefree.app.view_models.book import BookViewModel
 
 
 class Gift(Base):
@@ -41,6 +42,10 @@ class Gift(Base):
         book_model = Book()
         book_model.search_by_isbn(self.isbn)
         return book_model.first
+
+    @property
+    def reset_book(self):
+        return BookViewModel(self.book)
 
     @classmethod
     def recent(cls):

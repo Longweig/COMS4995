@@ -1,9 +1,8 @@
 from flask import Flask
 
 
-def create_app(config_filename):
+def create_app():
     app = Flask(__name__)
-    app.config.from_pyfile(config_filename)
 
     @app.route('/hello')
     def hello():
