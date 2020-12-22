@@ -47,8 +47,8 @@ class BookViewModel:
     def _price(self, book):
         if book["saleInfo"]["saleability"] == 'FOR_SALE':
             price = str(book['saleInfo']['retailPrice']['amount'])
-            return (price +
-                    book['saleInfo']['retailPrice']['currencyCode'])
+            return (price
+                    + book['saleInfo']['retailPrice']['currencyCode'])
         else:
             return 'Unknown'
 

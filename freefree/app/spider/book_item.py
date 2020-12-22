@@ -25,21 +25,13 @@ class Book:
         self.total = 0
         self.books = []
 
-    # def search_by_keyword(self, q, page=1):
-    #     """Get formatted HTTP response by keword `q` and specified page number `page`
-    #     and record results in `books` attribute.
-    #
-    #     :param q: Keywords for searching books.
-    #     :type q: string
-    #     :param page: Searched page numbe, defaults to 1.
-    #     :type page: int
-    #     """
-    #     url = self.keyword_url.format(q, current_app.config['PER_PAGE'],
-    #                                   self.calculate_start(page))
-    #     result = HTTP.get(url)
-    #     self.__fill_collection(result)
-
     def search_by_keyword(self, q):
+        """Get formatted HTTP response by keyword `q`
+        and record results in `books` attribute.
+
+        :param q: Keywords for searching books.
+        :type q: string
+        """
         url = self.keyword_url.format(q)
         result = HTTP.get(url)
         self.__fill_collection(result)
