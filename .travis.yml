@@ -18,7 +18,7 @@ before_install:
 script: 
   - flake8 --ignore=W291,E131,E502,E712,E402,W503 --exclude=freefree/app/web/__init__.py freefree/
     
-  - python -m pytest tests --cov freefree/
+  - python -m pytest tests --cov --exclude=freefree/app/web/ freefree/
 
 after_success:
    - codecov
