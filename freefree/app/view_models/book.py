@@ -17,7 +17,6 @@ class BookViewModel:
     :type image: string
     """
 
-
     def __init__(self, book):
         self.title = book["volumeInfo"]['title']
         self.publisher = book["volumeInfo"].get('publisher', 'Unknown')
@@ -60,12 +59,9 @@ class BookViewModel:
                 return item['identifier']
 
 
-
-
 class BookCollection:
     """A collection of `BookViewModel` objects
     based on a specific keywords
-
     :param total: the total number of `BookViewModel` objects in
     the collection
     :type total: int
@@ -81,11 +77,9 @@ class BookCollection:
         self.books = []
         self.keyword = ''
 
-
     def fill(self, book_item, keyword):
         """Fill the `BookViewModel` objects into
         `books` attribute
-
         :param book_item: `Book` object returned by getting HTTP response
         :type book_item: obj
         :param keyword: Query keywords for searching `book_item`
@@ -94,7 +88,6 @@ class BookCollection:
         self.total = book_item.total
         self.keyword = keyword
         self.books = [BookViewModel(book) for book in book_item.books]
-
 
 # class _BookViewModel:
 #     @classmethod

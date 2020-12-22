@@ -4,7 +4,6 @@ from flask import current_app
 
 class Book:
     """Book Response
-
     :param total: The number of items in http response either by 
         search_by_keyword or search_by_isbn. When it is
         result from search_by_isbn, `total` is 0 if the result
@@ -14,12 +13,11 @@ class Book:
     :type books: list
     """
 
-    # isbn_url = 'http://t.talelin.com/v2/book/isbn/{}'
-    # keyword_url = 'http://t.talelin.com/v2/book/search?q={}&count={}&start={}'
-
     # google api
-    isbn_url = 'https://www.googleapis.com/books/v1/volumes?q={}+isbn'
-    keyword_url = 'https://www.googleapis.com/books/v1/volumes?q={}'
+    isbn_url = \
+        'https://www.googleapis.com/books/v1/volumes?q={}+isbn'
+    keyword_url = \
+        'https://www.googleapis.com/books/v1/volumes?q={}'
 
     def __init__(self):
         """Constructor method
@@ -61,7 +59,6 @@ class Book:
     def __fill_single(self, data):
         """Append the  single record searched by ISBN number 
         in the HTTP response to the `books` attribute. 
-
         :param data: Results getting from formatted HTTP requests
         :type data: json format records or ''
         """

@@ -5,7 +5,6 @@ from ..models.gift import Gift
 from ..models.wish import Wish
 from flask import flash, redirect, url_for, render_template
 from ..libs.email import send_email
-from ..view_models.book import BookViewModel
 from ..view_models.trade import MyTrades
 
 

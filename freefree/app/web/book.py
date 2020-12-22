@@ -18,7 +18,7 @@ def search():
 
     if form.validate():
         q = form.q.data.strip()
-        page = form.page.data
+        # page = form.page.data
         isbn_or_key = is_isbn_or_key(q)
         book = Book()
 

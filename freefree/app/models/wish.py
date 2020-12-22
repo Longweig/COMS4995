@@ -17,7 +17,6 @@ class Wish(Base):
     # bid = Column(Integer, ForeignKey('book.id'))
     launched = Column(Boolean, default=False)
 
-
     @classmethod
     def get_user_wishes(cls, uid):
         wishes = Wish.query.filter_by(uid=uid, launched=False).order_by(
@@ -43,5 +42,6 @@ class Wish(Base):
     @property
     def reset_book(self):
         return BookViewModel(self.book)
+
 
 from freefree.app.models.gift import Gift
