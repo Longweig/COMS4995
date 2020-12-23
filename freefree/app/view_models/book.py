@@ -80,10 +80,11 @@ class BookCollection:
     def fill(self, book_item, keyword):
         """Fill the `BookViewModel` objects into
         `books` attribute
-        :param book_item: `Book` object returned by getting HTTP response
+        
+        :param book_item: `Book` object returned by HTTP response
         :type book_item: obj
         :param keyword: Query keywords for searching `book_item`
-        :type keyword: string
+        :type keyword: str
         """
         self.total = book_item.total
         self.keyword = keyword

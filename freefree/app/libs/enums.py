@@ -13,6 +13,19 @@ class PendingStatus(Enum):
 
     @classmethod
     def pending_str(cls, status, key):
+        """Turn the pending status value to string.
+        
+        :param status: Four situations. 1 represent `WAITING`,\
+        2 represents `SUCCESS`, 3 represents `REJECT` and 4 \
+        represents `WITHDRAW`.
+        :type status: `Enum` object.
+        :param key: Represent the identity of the current user, \
+        that is `Requester` or `Giver`.
+        :type key: str
+        :return: A short statement of the current trasaction \
+        (8 situations in total).
+        :rtype: string
+        """
         key_map = {
             cls.WAITING: {
                 'requester': 'Waiting for shipping to you',

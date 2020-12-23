@@ -87,6 +87,7 @@
 <li><a class="reference internal" href="#motivations">Motivations</a></li>
 <li><a class="reference internal" href="#what-is-it">What is it</a></li>
 <li><a class="reference internal" href="#more-features">More features</a></li>
+<li><a class="reference internal" href="#release-status">Release Status</a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#api-documentation">API Documentation</a></li>
@@ -160,9 +161,11 @@
 </div>
 <div class="section" id="freefree">
 <h1>FreeFree<a class="headerlink" href="#freefree" title="Permalink to this headline">¶</a></h1>
-<p><img alt="GitHub" src="https://img.shields.io/github/license/Longweig/FreeFree" /> <img alt="GitHub issues" src="https://img.shields.io/github/issues-raw/Longweig/FreeFree" />
-<a class="reference external" href="https://travis-ci.com/Longweig/FreeFree"><img alt="Build Status" src="https://travis-ci.com/Longweig/FreeFree.svg?branch=master" /></a>
-<img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/Longweig/FreeFree" /> <img alt="codecov" src="https://codecov.io/gh/Longweig/FreeFree/branch/master/graph/badge.svg?token=W937X95APO" /></p>
+<p><a class="reference external" href="https://travis-ci.com/Longweig/FreeFree"><img alt="Build Status" src="https://travis-ci.com/Longweig/FreeFree.svg?branch=master" /></a>
+<img alt="Codecov" src="https://img.shields.io/codecov/c/github/Longweig/FreeFree" />
+<a class="reference external" href="https://freefree.readthedocs.io/en/latest/?badge=latest"><img alt="Documentation Status" src="https://readthedocs.org/projects/freefree/badge/?version=latest" /></a>
+<img alt="GitHub" src="https://img.shields.io/github/license/Longweig/FreeFree" />
+<img alt="GitHub release (latest by date including pre-releases)" src="https://img.shields.io/github/v/release/Longweig/freefree?include_prereleases" /></p>
 <div class="section" id="motivations">
 <h2>Motivations<a class="headerlink" href="#motivations" title="Permalink to this headline">¶</a></h2>
 <p>There are always some books that we don’t need anymore but someone may want them. Although we can use second-hand platform to sell the books, sometimes we may want to just give or even throw them away since there is no insufficient space to store them. Also, sometimes we want some books for temporary use but it’s a waste to buy them. A free book give-way platform will help these people especially for students to get the books they need and give away the books then unwanted.</p>
@@ -177,6 +180,11 @@
 <li><p>More items (like furniture, pet products) to be in the list</p></li>
 <li><p>Based on the owners’ intention, some items can be provided with a second-hand trading platform</p></li>
 </ol>
+</div>
+<div class="section" id="release-status">
+<h2>Release Status<a class="headerlink" href="#release-status" title="Permalink to this headline">¶</a></h2>
+<p>There are two release (v0.1.0 and v0.1.1) of this project.
+For specifi release notes, please redirect to the repo for more <a class="reference external" href="https://github.com/Longweig/FreeFree/releases">details</a>.</p>
 </div>
 </div>
 <div class="section" id="api-documentation">
@@ -215,15 +223,12 @@ Calculate the <cite>start</cite> index of the         API function parameter by 
 
 <dl class="py method">
 <dt id="spider.book_item.Book.search_by_keyword">
-<code class="sig-name descname">search_by_keyword</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">q</span></em>, <em class="sig-param"><span class="n">page</span><span class="o">=</span><span class="default_value">1</span></em><span class="sig-paren">)</span><a class="headerlink" href="#spider.book_item.Book.search_by_keyword" title="Permalink to this definition">¶</a></dt>
-<dd><p>Get formatted HTTP response by keword <cite>q</cite> and specified page number <cite>page</cite>
+<code class="sig-name descname">search_by_keyword</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">q</span></em><span class="sig-paren">)</span><a class="headerlink" href="#spider.book_item.Book.search_by_keyword" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get formatted HTTP response by keyword <cite>q</cite>
 and record results in <cite>books</cite> attribute.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>q</strong> (<em>string</em>) – Keywords for searching books.</p></li>
-<li><p><strong>page</strong> (<em>int</em>) – Searched page numbe, defaults to 1.</p></li>
-</ul>
+<dd class="field-odd"><p><strong>q</strong> (<em>string</em>) – Keywords for searching books.</p>
 </dd>
 </dl>
 </dd></dl>
@@ -263,8 +268,7 @@ and record results in <cite>books</cite> attribute.</p>
 <dl class="py class">
 <dt id="view_models.book.BookCollection">
 <em class="property">class </em><code class="sig-prename descclassname">view_models.book.</code><code class="sig-name descname">BookCollection</code><a class="headerlink" href="#view_models.book.BookCollection" title="Permalink to this definition">¶</a></dt>
-<dd><p>searching for such book collection</p>
-<dl class="py method">
+<dd><dl class="py method">
 <dt id="view_models.book.BookCollection.fill">
 <code class="sig-name descname">fill</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">book_item</span></em>, <em class="sig-param"><span class="n">keyword</span></em><span class="sig-paren">)</span><a class="headerlink" href="#view_models.book.BookCollection.fill" title="Permalink to this definition">¶</a></dt>
 <dd><p>Fill the <cite>BookViewModel</cite> objects into
@@ -272,13 +276,257 @@ and record results in <cite>books</cite> attribute.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>book_item</strong> (<em>obj</em>) – <cite>Book</cite> object returned by getting HTTP response</p></li>
-<li><p><strong>keyword</strong> (<em>string</em>) – Query keywords for searching <cite>book_item</cite></p></li>
+<li><p><strong>book_item</strong> (<em>obj</em>) – <cite>Book</cite> object returned by HTTP response</p></li>
+<li><p><strong>keyword</strong> (<em>str</em>) – Query keywords for searching <cite>book_item</cite></p></li>
 </ul>
 </dd>
 </dl>
 </dd></dl>
 
+</dd></dl>
+
+<dl class="py class">
+<dt id="view_models.drift.DriftViewModel">
+<em class="property">class </em><code class="sig-prename descclassname">view_models.drift.</code><code class="sig-name descname">DriftViewModel</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">drift</span></em>, <em class="sig-param"><span class="n">current_user_id</span></em><span class="sig-paren">)</span><a class="headerlink" href="#view_models.drift.DriftViewModel" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="py method">
+<dt id="view_models.drift.DriftViewModel.requester_or_gifter">
+<em class="property">static </em><code class="sig-name descname">requester_or_gifter</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">drift</span></em>, <em class="sig-param"><span class="n">current_user_id</span></em><span class="sig-paren">)</span><a class="headerlink" href="#view_models.drift.DriftViewModel.requester_or_gifter" title="Permalink to this definition">¶</a></dt>
+<dd><p>Based on the drift records confirm an user with         <cite>current_user_id</cite> is a requester of a giver of the book.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>drift</strong> – the record related to <cite>current_user_id</cite>        in the database</p></li>
+<li><p><strong>current_user_id</strong> (<em>str</em>) – user id linked to drift record</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>A string of the user identity</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>string, <cite>requester</cite> or <cite>gifter</cite></p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="models.gift.Gift">
+<em class="property">class </em><code class="sig-prename descclassname">models.gift.</code><code class="sig-name descname">Gift</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">args</span><span class="p">:</span> <span class="n">Any</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span><span class="p">:</span> <span class="n">Any</span></em><span class="sig-paren">)</span><a class="headerlink" href="#models.gift.Gift" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="py method">
+<dt id="models.gift.Gift.book">
+<em class="property">property </em><code class="sig-name descname">book</code><a class="headerlink" href="#models.gift.Gift.book" title="Permalink to this definition">¶</a></dt>
+<dd><p>The information of the books related to the gifts which is returned         by the external APIs.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>one piece response in the format of <cite>Book</cite> object</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>object</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="models.gift.Gift.get_user_gifts">
+<em class="property">classmethod </em><code class="sig-name descname">get_user_gifts</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">uid</span></em><span class="sig-paren">)</span><a class="headerlink" href="#models.gift.Gift.get_user_gifts" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get all the gifts records related to the user with        <cite>uid</cite>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>uid</strong> (<em>str</em>) – user id</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>gift records in the database</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>Obj</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="models.gift.Gift.get_wish_counts">
+<em class="property">classmethod </em><code class="sig-name descname">get_wish_counts</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">isbn_list</span></em><span class="sig-paren">)</span><a class="headerlink" href="#models.gift.Gift.get_wish_counts" title="Permalink to this definition">¶</a></dt>
+<dd><p>Count the number of the wishes related to the book with        isbn numbers included in <cite>isbn_list</cite>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>isbn_list</strong> (<em>list</em>) – a list of isbn numbers</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>a list of the wish counts of the books of each isbn        number</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>list</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="models.gift.Gift.is_yourself_gift">
+<code class="sig-name descname">is_yourself_gift</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">uid</span></em><span class="sig-paren">)</span><a class="headerlink" href="#models.gift.Gift.is_yourself_gift" title="Permalink to this definition">¶</a></dt>
+<dd><p>Determine if the gift record related to the user with        <cite>uid</cite>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>uid</strong> (<em>str</em>) – user id</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><cite>True</cite> or <cite>False</cite></p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>Boolean</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="models.gift.Gift.recent">
+<em class="property">classmethod </em><code class="sig-name descname">recent</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#models.gift.Gift.recent" title="Permalink to this definition">¶</a></dt>
+<dd><p>Recent book info of the gifts which are ordered by <cite>create_time</cite>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>list of records in the format of <cite>Book</cite> object</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>list</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="models.gift.Gift.reset_book">
+<em class="property">property </em><code class="sig-name descname">reset_book</code><a class="headerlink" href="#models.gift.Gift.reset_book" title="Permalink to this definition">¶</a></dt>
+<dd><p>The information of the books related to the gifts which is returned         by the external APIs.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>one piece response in the format of <cite>BookViewModel</cite> object</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>object</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="models.user.User">
+<em class="property">class </em><code class="sig-prename descclassname">models.user.</code><code class="sig-name descname">User</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">args</span><span class="p">:</span> <span class="n">Any</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span><span class="p">:</span> <span class="n">Any</span></em><span class="sig-paren">)</span><a class="headerlink" href="#models.user.User" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="py method">
+<dt id="models.user.User.can_drift">
+<code class="sig-name descname">can_drift</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#models.user.User.can_drift" title="Permalink to this definition">¶</a></dt>
+<dd><p>Wheter the user can begin a trasaction.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><cite>True</cite> or <cite>False</cite></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>Boolean</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="models.user.User.can_save_to_list">
+<code class="sig-name descname">can_save_to_list</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">isbn</span></em><span class="sig-paren">)</span><a class="headerlink" href="#models.user.User.can_save_to_list" title="Permalink to this definition">¶</a></dt>
+<dd><p>Check if the book with <cite>isbn</cite> number can be related         to the current user</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>isbn</strong> (<em>str</em>) – book isbn number</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><cite>True</cite> or <cite>False</cite></p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>Boolean</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="models.user.User.check_password">
+<code class="sig-name descname">check_password</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">raw</span></em><span class="sig-paren">)</span><a class="headerlink" href="#models.user.User.check_password" title="Permalink to this definition">¶</a></dt>
+<dd><p>Check user passwords through hash code</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>raw</strong> (<em>str</em>) – user passwords</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><cite>True</cite> or <cite>False</cite></p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>Boolean</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="models.user.User.generate_token">
+<code class="sig-name descname">generate_token</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">expiration</span><span class="o">=</span><span class="default_value">600</span></em><span class="sig-paren">)</span><a class="headerlink" href="#models.user.User.generate_token" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generate a temporary token to hide the user id from safety        problems.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>expiration</strong> – expiration time (seconds)</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>a token</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="models.user.User.reset_password">
+<em class="property">static </em><code class="sig-name descname">reset_password</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">token</span></em>, <em class="sig-param"><span class="n">new_password</span></em><span class="sig-paren">)</span><a class="headerlink" href="#models.user.User.reset_password" title="Permalink to this definition">¶</a></dt>
+<dd><p>Based on the token to reset user’s passwords without user id.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>token</strong> (<em>str</em>) – a temporary token indicating the user id</p></li>
+<li><p><strong>new_password</strong> (<em>str</em>) – new password</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><cite>True</cite> if reset password succefully</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>Boolean</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="models.user.User.summary">
+<em class="property">property </em><code class="sig-name descname">summary</code><a class="headerlink" href="#models.user.User.summary" title="Permalink to this definition">¶</a></dt>
+<dd><p>User’s info summary</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>A dictionary containing user nickname, beans,        email address and trasaction history count.</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt id="models.user.get_user">
+<code class="sig-prename descclassname">models.user.</code><code class="sig-name descname">get_user</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">uid</span></em><span class="sig-paren">)</span><a class="headerlink" href="#models.user.get_user" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get current user through <cite>uid</cite>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>uid</strong> (<em>str</em>) – user id</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>The current user</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>Obj</p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="py function">
@@ -318,6 +566,31 @@ or <cite>keyword</cite>.</p>
 </dd>
 <dt class="field-odd">Return type</dt>
 <dd class="field-odd"><p>json format or string</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="libs.enums.PendingStatus">
+<em class="property">class </em><code class="sig-prename descclassname">libs.enums.</code><code class="sig-name descname">PendingStatus</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">value</span></em><span class="sig-paren">)</span><a class="headerlink" href="#libs.enums.PendingStatus" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="py method">
+<dt id="libs.enums.PendingStatus.pending_str">
+<em class="property">classmethod </em><code class="sig-name descname">pending_str</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">status</span></em>, <em class="sig-param"><span class="n">key</span></em><span class="sig-paren">)</span><a class="headerlink" href="#libs.enums.PendingStatus.pending_str" title="Permalink to this definition">¶</a></dt>
+<dd><p>Turn the pending status value to string.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>status</strong> (<cite>Enum</cite> object.) – Four situations. 1 represent <cite>WAITING</cite>,        2 represents <cite>SUCCESS</cite>, 3 represents <cite>REJECT</cite> and 4         represents <cite>WITHDRAW</cite>.</p></li>
+<li><p><strong>key</strong> (<em>str</em>) – Represent the identity of the current user,         that is <cite>Requester</cite> or <cite>Giver</cite>.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>A short statement of the current trasaction         (8 situations in total).</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>string</p>
 </dd>
 </dl>
 </dd></dl>

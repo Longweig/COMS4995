@@ -35,12 +35,35 @@ class User(Base, UserMixin):
 
     @password.setter
     def password(self, raw):
+        """
+        User password
+
+        :return: hash coded password
+        :rtype: str
+        """
         self._password = generate_password_hash(raw)
 
     def check_password(self, raw):
+        """
+        Check user passwords through hash code
+        
+        :param raw: user passwords
+        :type raw: str
+        :return: `True` or `False`
+        :rtype: Boolean
+        """
         return check_password_hash(self._password, raw)
 
     def can_save_to_list(self, isbn):
+        """
+        Check if the book with `isbn` number can be related \
+        to the current user 
+
+        :param isbn: book isbn number
+        :type isbn: str
+        :return: `True` or `False`
+        :rtype: Boolean
+        """
         if is_isbn_or_key(isbn) != 'isbn':
             return False
         book_item = Book()
@@ -58,11 +81,30 @@ class User(Base, UserMixin):
             return False
 
     def generate_token(self, expiration=600):
+        """
+        Generate a temporary token to hide the user id from safety\
+        problems.
+        
+        :param expiration: expiration time (seconds)
+        :type raw: int
+        :return: a token
+        :rtype: str
+        """
         s = Serializer(current_app.config['SECRET_KEY'], expiration)
         return s.dumps({'id': self.id}).decode('utf-8')
 
     @staticmethod
     def reset_password(token, new_password):
+        """
+        Based on the token to reset user's passwords without user id.
+        
+        :param token: a temporary token indicating the user id
+        :type token: str
+        :param new_password: new password
+        :type new_password: str
+        :return: `True` if reset password succefully
+        :rtype: Boolean
+        """
         s = Serializer(current_app.config['SECRET_KEY'])
         try:
             data = s.loads(token.encode('utf-8'))
@@ -75,6 +117,12 @@ class User(Base, UserMixin):
         return True
 
     def can_drift(self):
+        """
+        Wheter the user can begin a trasaction.
+        
+        :return: `True` or `False`
+        :rtype: Boolean
+        """
         if self.beans < 1:
             return False
 
@@ -92,6 +140,13 @@ class User(Base, UserMixin):
 
     @property
     def summary(self):
+        """
+        User's info summary
+        
+        :return: A dictionary containing user nickname, beans,\
+        email address and trasaction history count.
+        :rtype: dict
+        """
         return dict(
             nickname=self.nickname,
             beans=self.beans,
@@ -102,4 +157,12 @@ class User(Base, UserMixin):
 
 @login_manager.user_loader
 def get_user(uid):
+    """
+    Get current user through `uid`.
+    
+    :param uid: user id
+    :type uid: str
+    :return: The current user
+    :rtype: Obj
+    """
     return User.query.get(int(uid))

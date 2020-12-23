@@ -45,7 +45,7 @@ def setup(app):
 extensions = ['recommonmark', 'sphinx.ext.coverage', 'sphinx.ext.napoleon']
 extensions.append('sphinx.ext.autodoc')
 source_suffix = ['.rst', '.md']
-autodoc_mock_imports = ["flask", "freefree"]
+autodoc_mock_imports = ["flask", "freefree", "sqlalchemy", "werkzeug", "flask_login"]
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']
 
