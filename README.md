@@ -18,20 +18,20 @@ This web applicaion that aims to help people to get books they want for free. Pe
 
 ### Demo Presentation (More details will be added)
 #### User Login/Sign in/Log out/Forget Password Function Demo
-<img src="https://github.com/Longweig/FreeFree/blob/master/demos/login.gif" width="80%">
+<img src="https://github.com/Longweig/FreeFree/blob/master/demos/login.gif" width="70%">
 
 #### User Reset Password (Email Check) Demo
-<img src="https://github.com/Longweig/FreeFree/blob/master/demos/reset.gif" width="80%">                                                                                                                        
+<img src="https://github.com/Longweig/FreeFree/blob/master/demos/reset.gif" width="70%">                                                                                                                        
 
 #### User Add Books to Wish/Gift List Demo
-<img src="https://github.com/Longweig/FreeFree/blob/master/demos/list.gif" width="80%"> 
+<img src="https://github.com/Longweig/FreeFree/blob/master/demos/list.gif" width="70%"> 
 
 #### User Ask For Books Demo
-<img src="https://github.com/Longweig/FreeFree/blob/master/demos/request.gif" width="80%"> 
+<img src="https://github.com/Longweig/FreeFree/blob/master/demos/request.gif" width="70%"> 
 
     
 #### User Reject requests Demo
-<img src="https://github.com/Longweig/FreeFree/blob/master/demos/reject.gif" width="80%">    
+<img src="https://github.com/Longweig/FreeFree/blob/master/demos/reject.gif" width="70%">    
    
 #### User Give Away and Get Beans Demo
-<img src="https://github.com/Longweig/FreeFree/blob/master/demos/beans.gif" width="80%"> 
+<img src="https://github.com/Longweig/FreeFree/blob/master/demos/beans.gif" width="70%"> 
