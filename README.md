@@ -37,7 +37,7 @@ This web applicaion that aims to help people to get books they want for free. Pe
 <img src="https://github.com/Longweig/FreeFree/blob/master/demos/beans.gif" width="70%"> 
 
 ### How to Set it up?
-1. git clone the repo
+1. `git clone` the repo
 2. Install all the requirements
 3. Set up the configurations and run on your localhost
 
