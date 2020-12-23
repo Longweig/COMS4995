@@ -16,22 +16,22 @@ This web applicaion that aims to help people to get books they want for free. Pe
 1. More items (like furniture, pet products) to be in the list
 2. Based on the owners' intention, some items can be provided with a second-hand trading platform
 
-### Simple Demo (More details will be added)
-- Search details (keywords: Java)
-<img src="https://github.com/Longweig/FreeFree/blob/master/image/search_detail.png" width="55%">
+### Demo Presentation (More details will be added)
+#### User Login/Sign in/Log out/Forget Password Function Demo
+<img src="https://github.com/Longweig/FreeFree/blob/master/demos/login.gif" width="80%">
 
-- Book details 
-<img src="https://github.com/Longweig/FreeFree/blob/master/image/book_detail.png" width="55%">                                                                                                                        
+#### User Reset Password (Email Check) Demo
+<img src="https://github.com/Longweig/FreeFree/blob/master/demos/reset.gif" width="80%">                                                                                                                        
 
-- User Login 
-<img src="https://github.com/Longweig/FreeFree/blob/master/image/user_login.png" width="35%"> 
+#### User Add Books to Wish/Gift List Demo
+<img src="https://github.com/Longweig/FreeFree/blob/master/demos/list.gif" width="80%"> 
 
-- User Account
-<img src="https://github.com/Longweig/FreeFree/blob/master/image/user_account.png" width="35%"> 
+#### User Ask For Books Demo
+<img src="https://github.com/Longweig/FreeFree/blob/master/demos/request.gif" width="80%"> 
 
     
-- Gift List
-<img src="https://github.com/Longweig/FreeFree/blob/master/image/giftlist.png" width="55%">    
+#### User Reject requests Demo
+<img src="https://github.com/Longweig/FreeFree/blob/master/demos/reject.gif" width="80%">    
    
-- Wish List
-<img src="https://github.com/Longweig/FreeFree/blob/master/image/wishlist.png" width="55%"> 
+#### User Give Away and Get Beans Demo
+<img src="https://github.com/Longweig/FreeFree/blob/master/demos/beans.gif" width="80%"> 
