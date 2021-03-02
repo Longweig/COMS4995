@@ -41,4 +41,4 @@ This web applicaion that aims to help people to get books they want for free. Pe
 2. Install all the requirements
 3. Set up the configurations and run on your localhost
 
-### Will soon deploy on the cloud platform!
+### Coming soon wiht the deployment on the cloud platform!
